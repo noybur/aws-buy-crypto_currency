@@ -1,8 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  aws-bitcoin
-  Sample SAM Template for aws-bitcoin
+  aws-buy-crypto_currency
+  Sample SAM Template for aws-buy-crypto_currency
 
 Globals:
   Function:
