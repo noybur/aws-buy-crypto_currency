@@ -2,7 +2,7 @@
 
 [function_build_definitions]
 [function_build_definitions.7bce25bd-eaf1-49b8-9699-db592a208adb]
-codeuri = "C:\\Users\\user\\Desktop\\w\\pg\\python\\mycode\\aws-sam-btc\\reserve-invest-cycu\\app"
+codeuri = ""
 runtime = "python3.8"
 architecture = "x86_64"
 handler = "main.lambda_handler"
