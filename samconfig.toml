@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "reserve-invest"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1034jcxpgn1tu"
+s3_prefix = "reserve-invest"
+region = "ap-northeast-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []

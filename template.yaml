@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws-bitcoin
+  Sample SAM Template for aws-bitcoin
+
+Globals:
+  Function:
+    Timeout: 3
+    Tracing: Active
+  Api:
+    TracingEnabled: True
+
+Resources: 
+  BuyBTCFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: app/
+      Handler: main.lambda_handler
+      Runtime: python3.8
+      Timeout: 60
+      Architectures:
+        - x86_64
+      Policies:
+        - SSMParameterReadPolicy:
+            ParameterName: "bitbank/*"
+      # Events:
+      #   HelloWorld:
+      #     Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+      #     Properties:
+      #       Path: /hello
+      #       Method: GET
+
+Outputs:
+  # BuyBTCAPI:
+  #   Description: "API Gateway endpoint URL for Prod environment for First Function"
+  #   Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  BuyBTCFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt BuyBTCFunction.Arn
+  BuyBTCFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt BuyBTCFunctionRole.Arn
